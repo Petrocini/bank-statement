@@ -17,9 +17,12 @@ public class Transferencia implements Serializable {
     private double valor;
     private String tipo;
     private String nome_operador_transacao;
-    private Conta conta_id;
+    private int conta_id;
 
-    public Transferencia(int id, Date data_transferencia, double valor, String tipo, String nome_operador_transacao, Conta conta_id) {
+    public Transferencia() {
+    }
+
+    public Transferencia(int id, Date data_transferencia, double valor, String tipo, String nome_operador_transacao, int conta_id) {
         this.id = id;
         this.data_transferencia = data_transferencia;
         this.valor = valor;
@@ -48,7 +51,7 @@ public class Transferencia implements Serializable {
         return nome_operador_transacao;
     }
 
-    public Conta getConta_id() {
+    public int getConta_id() {
         return conta_id;
     }
 }

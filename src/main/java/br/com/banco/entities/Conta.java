@@ -12,6 +12,9 @@ public class Conta implements Serializable {
     private int id;
     private String nome_responsavel;
 
+    public Conta() {
+    }
+
     public Conta(int id, String nome_responsavel) {
         this.id = id;
         this.nome_responsavel = nome_responsavel;

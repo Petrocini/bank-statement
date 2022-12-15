@@ -18,7 +18,7 @@ public class TransferenciaResources {
     @GetMapping
     public ResponseEntity<List<Transferencia>> findTransferencias() {
         List<Transferencia> transferencias = new ArrayList<>();
-        transferencias.add(new Transferencia(1, new Date(), 10, "SAQUE", null, new Conta( 2, "Lucas Petrocini")));
+        transferencias.add(new Transferencia(1, new Date(), 10, "SAQUE", null, 1));
         return ResponseEntity.ok().body(transferencias);
     }
 
