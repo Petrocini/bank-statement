@@ -2,6 +2,8 @@ package br.com.banco.resources;
 
 import br.com.banco.entities.Conta;
 import br.com.banco.entities.Transferencia;
+import br.com.banco.services.TransferenciaServices;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,10 +17,12 @@ import java.util.List;
 @RequestMapping(value = "/transferencias")
 public class TransferenciaResources {
 
+    @Autowired
+    private TransferenciaServices services;
+
     @GetMapping
     public ResponseEntity<List<Transferencia>> findTransferencias() {
-        List<Transferencia> transferencias = new ArrayList<>();
-        transferencias.add(new Transferencia(1, new Date(), 10, "SAQUE", null, 1));
+        List<Transferencia> transferencias = services.findAll();
         return ResponseEntity.ok().body(transferencias);
     }
 
